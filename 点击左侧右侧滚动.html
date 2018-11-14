@@ -1,0 +1,230 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Untitled</title>
+     
+        <link rel="author" href="humans.txt">
+
+        <style>
+        	.box{
+        		
+				display: flex;
+        	}
+
+        	.box .left{
+        		width: 80px;
+        		height: 400px;
+
+        	}
+
+        	.box .right{
+        		flex: 1;
+        		height: 400px;
+
+        		overflow-y:auto;
+        		
+        	}
+
+
+
+        	.header{
+        		background: #eee;
+        		height: 44px;
+        		line-height: 44px;
+        	}
+
+        	button.active{
+
+        		background: red;
+        	}
+
+        </style>
+
+
+    </head>
+    <body>
+       	
+
+       	<div class="box" >
+			<div class="left" id="left">
+				
+				<button class="active">锅底</button>
+				<br>
+				<br>
+
+				<button>特色菜</button>
+				<br>
+				<br>
+
+				<button>小吃</button>
+				<br>
+				<br>
+
+				<button>素菜</button>
+				<br>
+
+			</div>
+       		
+       		
+
+       		<div class="right" id="right">
+       			
+       			
+       			<h2 class="header">锅底</h2>
+       			
+       			<ul class="list">
+       				<li>锅底列表数据</li>
+       				<li>锅底列表数据</li>
+       				<li>锅底列表数据</li>
+       				<li>锅底列表数据</li>
+       				<li>锅底列表数据</li>
+       				<li>锅底列表数据</li>
+       				<li>锅底列表数据</li>
+       				<li>锅底列表数据</li>
+       				<li>锅底列表数据</li>
+       				<li>锅底列表数据</li>
+       				<li>锅底列表数据</li>
+       				<li>锅底列表数据</li>
+       				
+       				<li>锅底列表数据</li>
+       				<li>锅底列表数据</li>
+       				<li>锅底列表数据</li>
+       				<li>锅底列表数据</li>
+       				
+       			</ul>
+       			
+       			<h2  class="header">特色菜</h2>
+       			
+       			<ul class="list">
+       				<li>素菜列表数据</li>
+       				<li>素菜列表数据</li>
+       				<li>素菜列表数据</li>
+       				<li>素菜列表数据</li>
+       				<li>列表数据</li>
+       				<li>列表数据</li>
+       				<li>素菜列表数据</li>
+       				<li>素菜列表数据</li>
+       				<li>素菜列表数据</li>
+       				<li>素菜列表数据</li>
+       				<li>列表数据</li>
+       				<li>列表数据</li>
+       				<li>素菜列表数据</li>
+       				<li>素菜列表数据</li>
+       				<li>素菜列表数据</li>
+       				<li>素菜列表数据</li>
+       				<li>列表数据</li>
+       				<li>列表数据</li>
+       			</ul>
+       			
+       			<h2  class="header">小吃</h2>
+       			
+       			<ul class="list">
+       				<li>素菜列表数据</li>
+       				<li>素菜列表数据</li>
+       				<li>素菜列表数据</li>
+       				<li>素菜列表数据</li>
+       				<li>列表数据</li>
+       				<li>列表数据</li>
+       				<li>素菜列表数据</li>
+       				<li>素菜列表数据</li>
+       				<li>素菜列表数据</li>
+       				<li>素菜列表数据</li>
+       				<li>列表数据</li>
+       				<li>列表数据</li>
+       				<li>素菜列表数据</li>
+       				<li>素菜列表数据</li>
+       				<li>素菜列表数据</li>
+       				<li>素菜列表数据</li>
+       				<li>列表数据</li>
+       				<li>列表数据</li>
+       			</ul>
+       			
+       			<h2  class="header">素菜</h2>
+       			
+       			<ul class="list">
+       				<li>素菜列表数据</li>
+       				<li>素菜列表数据</li>
+       				<li>素菜列表数据</li>
+       				<li>素菜列表数据</li>
+       				<li>列表数据</li>
+       				<li>列表数据</li>
+       				<li>素菜列表数据</li>
+       				<li>素菜列表数据</li>
+       				<li>素菜列表数据</li>
+       				<li>素菜列表数据</li>
+       				<li>列表数据</li>
+       				<li>列表数据</li>
+       				<li>素菜列表数据</li>
+       				<li>素菜列表数据</li>
+       				<li>素菜列表数据</li>
+       				<li>素菜列表数据</li>
+       				<li>列表数据</li>
+       				<li>列表数据</li>
+       			</ul>
+       			
+       			
+       			
+       		</div>
+
+       	</div>
+    </body>
+</html>
+
+ <script>
+
+window.onload=function(){
+
+	//获取左侧的按钮
+	var leftDom=document.getElementById('left');	
+	
+	var oButtons=leftDom.querySelectorAll('button');
+	
+	//获取右侧的dom节点
+	
+	var oRight=document.getElementById('right')
+	var oHeaders=document.querySelectorAll('.header');
+	
+	
+	for(var i=0;i<oButtons.length;i++){
+		
+		oButtons[i].index=i;
+		
+		oButtons[i].onclick=function(){			
+//			alert(this.index);
+
+			//获取分类距离顶部的高度			
+			//alert(oHeaders[this.index].offsetTop)
+			oRight.scrollTop=oHeaders[this.index].offsetTop+20;
+			
+		}
+		
+	}
+	
+	
+	
+	//右侧滑动改变左侧的选中状态
+	
+	
+	
+	oRight.onscroll=function(){
+			
+			//获取右侧滚动条滚动的高度
+			var st=oRight.scrollTop;			
+			
+			for(var i=0;i<oHeaders.length;i++){				
+				if(st>oHeaders[i].offsetTop){					
+//					console.log(i);
+					for(var j=0;j<oButtons.length;j++){
+						oButtons[j].className='';
+					}
+					oButtons[i].className='active';
+					
+				}
+			}
+	}
+}
+
+</script>
